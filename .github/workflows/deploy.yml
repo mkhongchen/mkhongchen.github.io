@@ -1,0 +1,20 @@
+name: Deploy Svelte site to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3 # Get your repo files
+      - uses: actions/setup-node@v3 # Install Node.js
+        with:
+          node-version: 18
+      - run: npm install # Install dependencies
+      - run: npm run build # Build Svelte into 'dist'
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Auth
+          publish_dir: ./dist # Folder to publish
