@@ -11,7 +11,6 @@
   export let borderColor = "black";
 
   //Layout props
-  export let width = "200px";
   export let align = "center";
   export let flexDirection = "column";
 
@@ -40,17 +39,25 @@
         color: {textColor};
         background-color: {backgroundColor};
         border-color: {borderColor};
-        width: {width};
-        height: {round ? width : 'auto'};
-        border-radius: {round ? '50%' : '15px'};
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: clamp(0.5rem, 2vw, 1.5rem);
+        
         padding: {round ? '0.65rem' : '0.5rem 1rem'};
+        width: {round
+        ? 'clamp(0.5rem, 2vw, 1.5rem)'
+        : 'clamp(10rem, 20vw, 20rem)'};
+        height: {round ? 'clamp(0.5rem, 2vw, 1.5rem)' : 'auto'};
+        border-radius: {round ? '50%' : '2vw'};
       "
     >
       {#if button.icon}
-        <Icon icon={button.icon} width="24" height="24" />
+        <Icon
+          icon={button.icon}
+          width="clamp(0.5rem, 2vw, 1.5rem)"
+          height="clamp(0.5rem, 2vw, 1.5rem)"
+        />
       {/if}
       {#if button.text}
         <span>{button.text}</span>
@@ -73,5 +80,6 @@
 
   .btn:hover {
     transform: scale(1.05);
+    filter: brightness(0.8);
   }
 </style>

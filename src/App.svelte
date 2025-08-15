@@ -35,17 +35,14 @@
   <!-- svelte-ignore a11y_img_redundant_alt -->
   <img src={profileImage} alt="Profile photo" />
 
-  <h1>{name}</h1>
+  <h1>
+    {name}
+  </h1>
 
   <p>{tagline}</p>
 
-  <ButtonList buttons={linkButtons} width="20vw" />
-  <ButtonList
-    buttons={socialButions}
-    width="15px"
-    flexDirection="row"
-    round={true}
-  />
+  <ButtonList buttons={linkButtons} />
+  <ButtonList buttons={socialButions} flexDirection="row" round={true} />
 </main>
 
 <style>
@@ -60,7 +57,15 @@
   }
 
   img {
-    width: 150px;
+    width: clamp(3rem, 40vw, 10rem);
     border-radius: 50%;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 6vw, 4rem);
+  }
+
+  p {
+    font-size: clamp(1rem, 2.5vw, 2rem);
   }
 </style>
