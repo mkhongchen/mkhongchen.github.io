@@ -30,7 +30,8 @@
   ];
 </script>
 
-<main class="home-page">
+<div class="background"></div>
+<main>
   <!-- svelte-ignore a11y_img_redundant_alt -->
   <img src={profileImage} alt="Profile photo" />
 
@@ -46,19 +47,19 @@
 
 <style>
   /* Make the entire page have the background */
-  .home-page {
+  .background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url("../assets/background.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-color: rgba(0, 0, 0, 0.5);
     background-blend-mode: darken;
-    /* z-index: -1; /* Ensure background stays behind content */
+    z-index: -1; /* Ensure background stays behind content */
   }
 
   main {

@@ -7,7 +7,8 @@
   ];
 </script>
 
-<main class="about-page">
+<div class="background"></div>
+<main>
   <h1>About Me</h1>
   <p>This is a placeholder about page. Add your content here.</p>
 
@@ -16,13 +17,14 @@
 
 <style>
   /* Make the entire page have the background */
-  .about-page {
+  .background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     background-color: black;
+    z-index: -1; /* Ensure background stays behind content */
   }
 
   main {
