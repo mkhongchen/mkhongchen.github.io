@@ -1,5 +1,6 @@
 <script>
   import ButtonList from "../components/ButtonList.svelte";
+  import Header from "../components/Header.svelte";
 
   let linkButtons = [
     { text: "Home", href: "#/" },
@@ -8,6 +9,9 @@
 </script>
 
 <div class="background"></div>
+
+<Header />
+
 <main>
   <h1>About Me</h1>
   <p>This is a placeholder about page. Add your content here.</p>
@@ -23,12 +27,16 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: black;
+    background-color: darkgray;
     z-index: -1; /* Ensure background stays behind content */
   }
 
   main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    margin-top: 2rem;
+    gap: 2rem;
   }
 </style>
