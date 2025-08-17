@@ -4,7 +4,7 @@ export const mainButtons = [
     href: "#/about", 
     submenu: [
         { text: "About Me", href: "#/about/about-me" },
-        { text: "About the Website", href: "#/about-website" },
+        { text: "About the Website", href: "#/about/website" },
       ],
   },
   { text: "Portfolio", href: "#/portfolio",
