@@ -28,7 +28,8 @@
     },
     {
       text: "Contact",
-      href: "#/contact",
+      href: "https://mkhongchen.ca/contact",
+      external: true,
       backgroundColor: "rgba(0,0,0,0.0)",
       width: "auto",
       justifyContent: "flex-end",
