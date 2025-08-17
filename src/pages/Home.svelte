@@ -7,7 +7,7 @@
   import backgroundImage from "../assets/background.jpg";
 
   let name = "Hong Chen";
-  let tagline = "Aspiring architect and designer. Website under development";
+  let tagline = "Aspiring architect and designer.\n Website under development.";
 
   // Main Button List
   let linkButtons = [
@@ -18,31 +18,33 @@
 
   let socialButions = [
     {
-      icon: "simple-icons:instagram",
-      href: "https://www.instagram.com/mk.hongchen/",
+      icon: "cib:linkedin",
+      href: "https://www.linkedin.com/in/mkhongchen/",
       external: true,
     },
     {
-      icon: "cib:linkedin",
-      href: "https://www.linkedin.com/in/mkhongchen/",
+      icon: "simple-icons:github",
+      href: "https://github.com/mkhongchen/mkhongchen.github.io/",
+      external: true,
+    },
+    {
+      icon: "simple-icons:instagram",
+      href: "https://www.instagram.com/mk.hongchen/",
       external: true,
     },
   ];
 </script>
 
-<div class="background"></div>
+<div class="background" style="background-image: url({backgroundImage});"></div>
 <main>
   <!-- svelte-ignore a11y_img_redundant_alt -->
   <img src={profileImage} alt="Profile photo" />
 
-  <h1>
-    {name}
-  </h1>
-
+  <h1>{name}</h1>
   <p>{tagline}</p>
 
   <ButtonList buttons={linkButtons} />
-  <ButtonList buttons={socialButions} flexDirection="row" round={true} />
+  <ButtonList buttons={socialButions} flexDirection="row" gap="1rem" />
 </main>
 
 <style>
@@ -53,7 +55,6 @@
     left: 0;
     width: 100vw;
     min-height: 100vh;
-    background-image: url("../assets/background.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -68,18 +69,23 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    gap: 2rem;
   }
 
   img {
-    width: clamp(3rem, 40vw, 10rem);
+    width: 150px;
     border-radius: 50%;
   }
 
   h1 {
-    font-size: clamp(2rem, 6vw, 4rem);
+    font-size: 40pt;
+    margin: 0;
   }
 
   p {
-    font-size: clamp(1rem, 2.5vw, 2rem);
+    font-size: 14pt;
+    white-space: pre-line;
+    line-height: 1.75;
+    margin: 0;
   }
 </style>
