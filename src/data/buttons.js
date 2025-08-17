@@ -1,7 +1,18 @@
 // Main navigation buttons
 export const mainButtons = [
-  { text: "About Me", href: "#/about" },
-  { text: "Portfolio", href: "#/portfolio" },
+  { text: "About Me", 
+    href: "#/about", 
+    submenu: [
+        { text: "About Me", href: "#/about/about-me" },
+        { text: "About the Website", href: "#/about-website" },
+      ],
+  },
+  { text: "Portfolio", href: "#/portfolio",
+    submenu: [
+        { text: "Project A", href: "#/portfolio-a" },
+        { text: "Project B", href: "#/portfolio-b" },
+    ],
+   },
   { text: "Contact", href: "https://mkhongchen.ca/contact", external: true },
 ];
 
@@ -24,7 +35,7 @@ export const socialButtons = [
     },
 ];
 
-//Maing home button
+//Main home button
 export const home = 
   {
     text: "Hong Chen",

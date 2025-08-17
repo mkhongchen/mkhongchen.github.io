@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte";
+  import { slide } from "svelte/transition";
   import ButtonList from "./ButtonList.svelte";
   import TextButton from "./TextButton.svelte";
   import { home, mainButtons } from "../data/buttons";
@@ -11,8 +12,7 @@
     justifyContent: "flex-end",
   }));
 
-  let showMenu = false; // controls mobile hamburger menu
-
+  let showMenu = false;
   let windowWidth = 0;
 
   onMount(() => {
@@ -29,7 +29,7 @@
 
 <nav
   class="header"
-  style="align-items: {windowWidth > 768 ? 'end' : 'centre'};"
+  style="align-items: {windowWidth > 768 ? 'end' : 'center'};"
 >
   <TextButton {...home} />
 
@@ -39,9 +39,14 @@
   {:else}
     <!-- Mobile hamburger menu -->
     <button class="hamburger" on:click={toggleMenu}> &#9776; </button>
+
     {#if showMenu}
-      <div class="mobile-menu-container">
-        <ButtonList buttons={navLinks} />
+      <div class="mobile-menu-container" transition:slide>
+        <ButtonList
+          buttons={navLinks}
+          showSubmenu={true}
+          alignItems="flex-end"
+        />
       </div>
     {/if}
   {/if}
@@ -54,7 +59,7 @@
     top: 0;
     left: 0;
     z-index: 10;
-    background: black; /* Or your preferred color */
+    background: black;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 
     display: flex;
@@ -77,7 +82,7 @@
     right: 0;
     width: 100%;
     padding: 1rem 2rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     background: black;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   }
 </style>

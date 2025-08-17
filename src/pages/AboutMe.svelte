@@ -7,8 +7,8 @@
 <Header />
 
 <main>
-  <h1>About</h1>
-  <p>This is a placeholder about page. Add your content here.</p>
+  <h1>About Me</h1>
+  <p>This is a placeholder about me page. Add your content here.</p>
 </main>
 
 <style>
