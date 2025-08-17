@@ -2,37 +2,15 @@
   // Component Imports
   import ButtonList from "../components/ButtonList.svelte";
 
-  // Other Imports
+  // Image Imports
   import profileImage from "../assets/profile.jpg";
   import backgroundImage from "../assets/background.jpg";
 
+  // Button Data Imports
+  import { mainButtons, socialButtons } from "../data/buttons.js";
+
   let name = "Hong Chen";
   let tagline = "Aspiring architect and designer.\n Website under development.";
-
-  // Main Button List
-  let linkButtons = [
-    { text: "About Me", href: "#/about" },
-    { text: "Portfolio", href: "#/portfolio" },
-    { text: "Contact", href: "https://mkhongchen.ca/contact", external: true },
-  ];
-
-  let socialButions = [
-    {
-      icon: "cib:linkedin",
-      href: "https://www.linkedin.com/in/mkhongchen/",
-      external: true,
-    },
-    {
-      icon: "simple-icons:github",
-      href: "https://github.com/mkhongchen/mkhongchen.github.io/",
-      external: true,
-    },
-    {
-      icon: "simple-icons:instagram",
-      href: "https://www.instagram.com/mk.hongchen/",
-      external: true,
-    },
-  ];
 </script>
 
 <div class="background" style="background-image: url({backgroundImage});"></div>
@@ -43,8 +21,8 @@
   <h1>{name}</h1>
   <p>{tagline}</p>
 
-  <ButtonList buttons={linkButtons} />
-  <ButtonList buttons={socialButions} flexDirection="row" gap="1rem" />
+  <ButtonList buttons={mainButtons} />
+  <ButtonList buttons={socialButtons} flexDirection="row" gap="1rem" />
 </main>
 
 <style>

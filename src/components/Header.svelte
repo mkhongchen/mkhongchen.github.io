@@ -2,39 +2,14 @@
   import { onMount } from "svelte";
   import ButtonList from "./ButtonList.svelte";
   import TextButton from "./TextButton.svelte";
+  import { home, mainButtons } from "../data/buttons";
 
-  // Navigation items
-  let home = {
-    text: "Hong Chen",
-    fontSize: "24pt",
-    href: "#/",
+  const navLinks = mainButtons.map((button) => ({
+    ...button,
     backgroundColor: "rgba(0,0,0,0.0)",
     width: "auto",
-  };
-  let navLinks = [
-    {
-      text: "About Me",
-      href: "#/about",
-      backgroundColor: "rgba(0,0,0,0.0)",
-      width: "auto",
-      justifyContent: "flex-end",
-    },
-    {
-      text: "Portfolio",
-      href: "#/portfolio",
-      backgroundColor: "rgba(0,0,0,0.0)",
-      width: "auto",
-      justifyContent: "flex-end",
-    },
-    {
-      text: "Contact",
-      href: "https://mkhongchen.ca/contact",
-      external: true,
-      backgroundColor: "rgba(0,0,0,0.0)",
-      width: "auto",
-      justifyContent: "flex-end",
-    },
-  ];
+    justifyContent: "flex-end",
+  }));
 
   let showMenu = false; // controls mobile hamburger menu
 
