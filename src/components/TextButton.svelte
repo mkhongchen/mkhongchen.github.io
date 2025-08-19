@@ -12,7 +12,7 @@
   export let width = "150px";
   export let justifyContent = "center";
   export let scrollTo = "";
-  export let offset = 50;
+  export let offset = 80;
 
   function handleClick(event) {
     if (external) return;
