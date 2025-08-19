@@ -3,8 +3,8 @@ export const mainButtons = [
   { text: "About Me", 
     href: "#/about", 
     submenu: [
-        { text: "About Me", href: "#/about#", scrollTo: "about-me" },
-        { text: "About the Website", href: "#/about#about-site", scrollTo: "about-site" },
+        { text: "About Me", href: "#/about", scrollTo: "#about-me" },
+        { text: "About the Website", href: "#/about", scrollTo: "#about-site" },
       ],
   },
   { text: "Portfolio", href: "#/portfolio",

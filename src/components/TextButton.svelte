@@ -3,6 +3,8 @@
   export let text;
   export let external = false;
 
+  import { push } from "svelte-spa-router";
+
   // Style props
   export let textColor = "white";
   export let fontSize = `12pt`;
@@ -10,23 +12,28 @@
   export let width = "150px";
   export let justifyContent = "center";
   export let scrollTo = "";
-  export let scrollOffset = 100;
-
-  function scrollToSection(id) {
-    if (!id) return;
-    const el = document.getElementById(id);
-    if (el) {
-      // Get the element's position relative to the document
-      const y = el.getBoundingClientRect().top + window.scrollY - scrollOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
-  }
+  export let offset = 50;
 
   function handleClick(event) {
-    // If scrollTo is set, prevent default navigation and scroll
-    if (scrollTo) {
-      event.preventDefault();
-      scrollToSection(scrollTo);
+    if (external) return;
+
+    event.preventDefault();
+
+    if (href) {
+      push(href).then(() => {
+        if (scrollTo) {
+          setTimeout(() => {
+            const el = document.getElementById(scrollTo.replace(/^#/, ""));
+            if (el) {
+              const rect = el.getBoundingClientRect();
+              const scrollTop =
+                window.pageYOffset || document.documentElement.scrollTop;
+              const targetY = rect.top + scrollTop - offset;
+              window.scrollTo({ top: targetY, behavior: "smooth" });
+            }
+          }, 100); // Adjust delay if needed
+        }
+      });
     }
   }
 </script>
@@ -36,7 +43,6 @@
   {href}
   target={external ? "_blank" : "_self"}
   rel={external ? "noopener noreferrer" : undefined}
-  on:click={handleClick}
   style="
     font-size: {fontSize};
     color: {textColor};
@@ -44,6 +50,7 @@
     width: {width};
     display: flex;
     justify-content: {justifyContent};"
+  on:click={handleClick}
 >
   <span>{text}</span>
 </a>
