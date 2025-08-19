@@ -7,8 +7,73 @@
 <Header />
 
 <main>
-  <h1>About</h1>
-  <p>This is a placeholder about page. Add your content here.</p>
+  <section id="about-me">
+    <h1>About Me</h1>
+    <p>This is a placeholder about page. Add your content here.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+  </section>
+
+  <section id="about-site">
+    <h1>About The Website</h1>
+    <p>This is a placeholder about page. Add your content here.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+    <p>This is placeholder text.</p>
+  </section>
 </main>
 
 <style>
@@ -30,5 +95,6 @@
     justify-content: center;
     text-align: center;
     gap: 2rem;
+    padding-top: 50px;
   }
 </style>

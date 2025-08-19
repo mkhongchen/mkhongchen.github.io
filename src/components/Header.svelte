@@ -35,7 +35,13 @@
 
   {#if windowWidth > 768}
     <!-- Desktop nav -->
-    <ButtonList buttons={navLinks} flexDirection="row" gap="0.5rem" />
+    <ButtonList
+      buttons={navLinks}
+      showSubmenu={true}
+      flexDirection="row"
+      anchorBelow={true}
+      gap="0.5rem"
+    />
   {:else}
     <!-- Mobile hamburger menu -->
     <button class="hamburger" on:click={toggleMenu}> &#9776; </button>

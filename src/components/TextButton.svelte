@@ -9,6 +9,26 @@
   export let backgroundColor = "rgba(0,0,0,0.4)";
   export let width = "150px";
   export let justifyContent = "center";
+  export let scrollTo = "";
+  export let scrollOffset = 100;
+
+  function scrollToSection(id) {
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (el) {
+      // Get the element's position relative to the document
+      const y = el.getBoundingClientRect().top + window.scrollY - scrollOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  }
+
+  function handleClick(event) {
+    // If scrollTo is set, prevent default navigation and scroll
+    if (scrollTo) {
+      event.preventDefault();
+      scrollToSection(scrollTo);
+    }
+  }
 </script>
 
 <a
@@ -16,6 +36,7 @@
   {href}
   target={external ? "_blank" : "_self"}
   rel={external ? "noopener noreferrer" : undefined}
+  on:click={handleClick}
   style="
     font-size: {fontSize};
     color: {textColor};

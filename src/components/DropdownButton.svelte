@@ -8,8 +8,10 @@
   export let href = "#";
   export let external = false;
   export let submenu = []; // array of { text, href, external }
+  export let anchorBelow = false;
 
   let open = false;
+
   function toggleSubmenu() {
     open = !open;
   }
@@ -29,13 +31,14 @@
   </div>
 
   {#if open && submenu.length > 0}
-    <div transition:slide>
-      <ButtonList
-        buttons={submenu}
-        flexDirection="row"
-        gap="0.25rem"
-        alignItems="flex-end"
-      />
+    <div
+      class="submenu-box"
+      style="position: {anchorBelow ? 'absolute' : 'relative'};
+      top: {anchorBelow ? '100%' : '0'};
+      width: {anchorBelow ? '100%' : ''};"
+      transition:slide
+    >
+      <ButtonList buttons={submenu} flexDirection="row" gap="0.25rem" />
     </div>
   {/if}
 </div>
@@ -66,5 +69,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .submenu-box {
+    right: 0;
+    background: black;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    z-index: 20;
   }
 </style>

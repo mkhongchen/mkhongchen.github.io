@@ -8,15 +8,17 @@
   export let gap = "2rem";
   export let showSubmenu = false;
   export let alignItems = "center";
+  export let anchorBelow = false;
+  export let justifyContent = "center";
 </script>
 
 <div
   class="button-list"
-  style="display: flex; flex-direction: {flexDirection}; gap: {gap}; align-items: {alignItems};"
+  style="display: flex; flex-direction: {flexDirection}; gap: {gap}; align-items: {alignItems}; justify-content: {justifyContent};"
 >
   {#each buttons as button}
     {#if button.submenu && showSubmenu}
-      <DropdownButton {...button} />
+      <DropdownButton {...button} {anchorBelow} />
     {:else if button.text}
       <TextButton {...button} />
     {:else}
