@@ -4,6 +4,7 @@
   import ButtonList from "./ButtonList.svelte";
   import TextButton from "./TextButton.svelte";
   import { home, mainButtons } from "../data/buttons";
+  import { BREAKPOINTS } from "../styles/breakpoints.js";
 
   const navLinks = mainButtons.map((button) => ({
     ...button,
@@ -33,7 +34,7 @@
 >
   <TextButton {...home} />
 
-  {#if windowWidth > 768}
+  {#if windowWidth > BREAKPOINTS.desktop}
     <!-- Desktop nav -->
     <ButtonList
       buttons={navLinks}
