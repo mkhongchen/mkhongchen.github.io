@@ -4,7 +4,7 @@
   import { BREAKPOINTS } from "../styles/breakpoints.js";
 
   import ButtonList from "../components/ButtonList.svelte";
-  import { mainButtons, socialButtons } from "../data/buttons";
+  import { socialButtons } from "../data/buttons";
   import { sourceCode, contactLink } from "../data/textlinks.js";
 
   import svelteIcon from "../assets/svelte.svg";
@@ -23,8 +23,6 @@
       delete document.documentElement.dataset.page;
     }
   });
-
-  const contactButton = mainButtons.find((btn) => btn.text === "Contact");
 
   // use matchMedia to set a class instead of relying on var() in @media
   const mq =
@@ -115,7 +113,9 @@
       <p>
         This website is built using Svelte and Vite, with Svelte-SPA-Router for
         client-side routing. The programming for the site was done entirely by
-        myself, with guiding input from ChatGPT and CoPilot.
+        myself, with guiding input from ChatGPT and CoPilot. Some pages may also
+        redirect to other services (e.g., Adobe Portfolio for contact forms,
+        CloudFlare for CDN).
       </p>
       <p>
         The website is hosted on GitHub Pages, with the source code available

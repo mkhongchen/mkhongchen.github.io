@@ -4,7 +4,6 @@
 
   // Image Imports
   import profileImage from "../assets/profile.jpg";
-  import backgroundImage from "../assets/background.jpg";
 
   // Button Data Imports
   import { mainButtons, socialButtons } from "../data/buttons.js";
@@ -22,11 +21,18 @@
     }
   });
 
+  const navButtons = mainButtons.map((button) => ({
+    ...button,
+    backgroundColor: "rgba(0,0,0,0.4)",
+    width: "auto",
+    justifyContent: "flex-end",
+    padding: "5px 15px",
+  }));
+
   let name = "Hong Chen";
   let tagline = "Aspiring architect and designer.\n Website under development.";
 </script>
 
-<div class="background" style="background-image: url({backgroundImage});"></div>
 <main>
   <!-- svelte-ignore a11y_img_redundant_alt -->
   <img src={profileImage} alt="Profile photo" />
@@ -34,26 +40,11 @@
   <h1>{name}</h1>
   <p>{tagline}</p>
 
-  <ButtonList buttons={mainButtons} />
+  <ButtonList buttons={navButtons} />
   <ButtonList buttons={socialButtons} flexDirection="row" gap="1rem" />
 </main>
 
 <style>
-  /* Make the entire page have the background */
-  .background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: rgba(0, 0, 0, 0.5);
-    background-blend-mode: darken;
-    z-index: -1; /* Ensure background stays behind content */
-  }
-
   main {
     display: flex;
     flex-direction: column;

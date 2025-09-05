@@ -22,7 +22,7 @@ html, body {
 body {
   min-height: 100vh;
   margin: 0;
-  background: white;
+  background: blue;
   /* remove background-attachment: fixed to avoid mobile/background clipping issues */
   color: #fff;
 }
@@ -33,7 +33,9 @@ body {
 }
 
 [data-page="home"] body {
-  background-image: url('/assets/background.jpg');
+  background-image: url('./assets/background.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 [data-page="portfolio"] body {
