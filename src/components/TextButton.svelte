@@ -13,6 +13,7 @@
   export let justifyContent = "center";
   export let scrollTo = "";
   export let offset = 80;
+  export let padding = "5px";
 
   function handleClick(event) {
     if (external) return;
@@ -49,7 +50,8 @@
     background-color: {backgroundColor};
     width: {width};
     display: flex;
-    justify-content: {justifyContent};"
+    justify-content: {justifyContent};
+    padding: {padding};"
   on:click={handleClick}
 >
   <span>{text}</span>
@@ -58,7 +60,6 @@
 <style>
   .text-button {
     height: auto;
-    padding: 5px;
     border-radius: 10px;
     text-decoration: none;
     border: none;
