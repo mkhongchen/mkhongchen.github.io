@@ -11,6 +11,19 @@
   import viteIcon from "../assets/vite.svg";
   import Icon from "@iconify/svelte";
 
+  import { onMount, onDestroy } from "svelte";
+
+  onMount(() => {
+    document.documentElement.dataset.page = "about";
+  });
+
+  onDestroy(() => {
+    // only remove if still set to this page (prevents stomping another page)
+    if (document.documentElement.dataset.page === "about") {
+      delete document.documentElement.dataset.page;
+    }
+  });
+
   const contactButton = mainButtons.find((btn) => btn.text === "Contact");
 
   // use matchMedia to set a class instead of relying on var() in @media
@@ -31,8 +44,6 @@
     else mq.addListener(updateDesktopClass);
   }
 </script>
-
-<div class="background"></div>
 
 <Header />
 
@@ -130,17 +141,6 @@
 </main>
 
 <style>
-  /* Make the entire page have the background */
-  .background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(20, 20, 20);
-    z-index: -1; /* Ensure background stays behind content */
-  }
-
   main {
     display: flex;
     flex-direction: column;

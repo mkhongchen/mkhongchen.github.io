@@ -1,5 +1,18 @@
 <script>
   import Header from "../components/Header.svelte";
+
+  import { onMount, onDestroy } from "svelte";
+
+  onMount(() => {
+    document.documentElement.dataset.page = "portfolio";
+  });
+
+  onDestroy(() => {
+    // only remove if still set to this page (prevents stomping another page)
+    if (document.documentElement.dataset.page === "portfolio") {
+      delete document.documentElement.dataset.page;
+    }
+  });
 </script>
 
 <div class="background"></div>

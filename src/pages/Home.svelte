@@ -9,6 +9,19 @@
   // Button Data Imports
   import { mainButtons, socialButtons } from "../data/buttons.js";
 
+  import { onMount, onDestroy } from "svelte";
+
+  onMount(() => {
+    document.documentElement.dataset.page = "home";
+  });
+
+  onDestroy(() => {
+    // only remove if still set to this page (prevents stomping another page)
+    if (document.documentElement.dataset.page === "home") {
+      delete document.documentElement.dataset.page;
+    }
+  });
+
   let name = "Hong Chen";
   let tagline = "Aspiring architect and designer.\n Website under development.";
 </script>

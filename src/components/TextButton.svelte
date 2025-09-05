@@ -8,7 +8,7 @@
   // Style props
   export let textColor = "white";
   export let fontSize = `12pt`;
-  export let backgroundColor = "rgba(0,0,0,0.4)";
+  export let backgroundColor = "rgba(0,0,0,0)";
   export let width = "150px";
   export let justifyContent = "center";
   export let scrollTo = "";

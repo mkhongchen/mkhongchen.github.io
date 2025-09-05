@@ -9,8 +9,14 @@
   export let external = false;
   export let submenu = []; // array of { text, href, external }
   export let anchorBelow = false;
+  export let background = "rgba(0,0,0,0)";
 
   let open = false;
+
+  const submenuwrap = submenu.map((button) => ({
+    ...button,
+    backgroundColor: "rgba(0,0,0,0)",
+  }));
 
   function toggleSubmenu() {
     open = !open;
@@ -20,7 +26,7 @@
 <div class="dropdown-button">
   <div class="main-row">
     <!-- Main label uses TextButton -->
-    <TextButton {text} {href} {external} />
+    <TextButton {text} {href} {external} backgroundColor="rgba(0,0,0,0)" />
 
     <!-- Arrow toggle -->
     {#if submenu.length > 0}
@@ -33,12 +39,14 @@
   {#if open && submenu.length > 0}
     <div
       class="submenu-box"
-      style="position: {anchorBelow ? 'absolute' : 'relative'};
+      style="
+      position: {anchorBelow ? 'absolute' : 'relative'};
       top: {anchorBelow ? '100%' : '0'};
-      width: {anchorBelow ? '100%' : ''};"
+      width: {anchorBelow ? '100%' : ''};
+      background: {background};"
       transition:slide
     >
-      <ButtonList buttons={submenu} flexDirection="row" gap="0.25rem" />
+      <ButtonList buttons={submenuwrap} flexDirection="row" gap="0.25rem" />
     </div>
   {/if}
 </div>
@@ -73,9 +81,9 @@
 
   .submenu-box {
     right: 0;
-    background: black;
     padding: 0.5rem 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     z-index: 20;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 </style>

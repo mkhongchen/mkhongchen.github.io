@@ -13,6 +13,13 @@
     justifyContent: "flex-end",
   }));
 
+  const navLinksDesk = mainButtons.map((button) => ({
+    ...button,
+    backgroundColor: "rgba(0,0,0,0.0)",
+    width: "auto",
+    justifyContent: "flex-end",
+  }));
+
   let showMenu = false;
   let windowWidth = 0;
 
@@ -30,6 +37,7 @@
 
 <nav
   class="header"
+  class:open={showMenu}
   style="align-items: {windowWidth > 768 ? 'end' : 'center'};"
 >
   <TextButton {...home} />
@@ -65,14 +73,26 @@
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
     z-index: 10;
-    background: black;
+    background: rgba(0, 0, 0, 0.589);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 1.5rem;
     box-sizing: border-box;
+  }
+
+  /* when open, let header expand vertically so the same backdrop-filter covers menu */
+  .header.open {
+    /* keep main header content on one line */
+    align-items: center;
+    /* allow the menu to move to the next line without turning the header into a column */
+    flex-wrap: wrap;
+    padding-bottom: 1rem;
   }
 
   .hamburger {
@@ -89,7 +109,20 @@
     right: 0;
     width: 100%;
     padding: 1rem 2rem;
-    background: black;
+    background: rgba(0, 0, 0, 0.589);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    /* no backdrop-filter here when we want the header to do the blurring */
+  }
+
+  .header.open .mobile-menu-container {
+    /* stay inside the header so the header backdrop-filter affects it,
+       but occupy a new full-width row below the header content */
+    position: static;
+    order: 99;
+    flex-basis: 100%;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: transparent; /* header already provides the translucent background */
+    box-shadow: none;
   }
 </style>
