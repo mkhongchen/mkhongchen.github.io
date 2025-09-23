@@ -1,6 +1,10 @@
 <script>
   import Header from "../components/Header.svelte";
 
+  import ProjectBrowser from "../components/ProjectBrowser.svelte";
+
+  import { portfolio } from "../data/portfolio.js";
+
   import { onMount, onDestroy } from "svelte";
 
   onMount(() => {
@@ -22,6 +26,7 @@
 <main>
   <h1>Portfolio</h1>
   <p>This is a placeholder page. Add your content here.</p>
+  <ProjectBrowser projectsList={portfolio} />
 </main>
 
 <style>
