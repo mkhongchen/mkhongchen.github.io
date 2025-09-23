@@ -22,14 +22,14 @@ html, body {
 body {
   min-height: 100vh;
   margin: 0;
-  background: blue;
+  background: rgb(0, 0, 0);
   /* remove background-attachment: fixed to avoid mobile/background clipping issues */
   color: #fff;
 }
 
 /* page-specific backgrounds */
 [data-page="about"] body {
-  background: linear-gradient(135deg,#45290e,#020e1b);
+  background: linear-gradient(140deg,#6f3d0e,#011b37);
 }
 
 [data-page="home"] body {

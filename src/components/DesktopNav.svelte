@@ -50,7 +50,7 @@
       {/each}
     </ul>
 
-    {#if openIndex !== null}
+    {#if openIndex !== null && buttons[openIndex].submenu}
       <div
         class="submenu-row"
         role="menu"
@@ -71,7 +71,9 @@
 <style>
   .desktop-nav {
     display: flex;
+    box-sizing: border-box;
     justify-content: space-between;
+    padding: 0.5rem 3rem;
     align-items: center;
     position: relative;
     width: 100%;
@@ -80,7 +82,7 @@
 
   .menu {
     display: flex;
-    gap: 2rem;
+    gap: 4rem;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -111,9 +113,7 @@
     justify-content: center;
     gap: 3rem;
     background: rgba(20, 20, 20, 0.8);
-    backdrop-filter: blur(10px);
     padding: 0.5rem 0;
-    border-radius: 0 0 8px 8px;
     z-index: 5;
   }
 </style>

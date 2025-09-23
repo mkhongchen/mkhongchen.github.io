@@ -2,7 +2,13 @@
   import DesktopNav from "./DesktopNav.svelte";
   import MobileNav from "./MobileNav.svelte";
   import { onMount } from "svelte";
-  import { home, mainButtons } from "../data/buttons.js";
+  import { home as baseHome, mainButtons } from "../data/buttons.js";
+
+  let home = {
+    ...baseHome,
+    width: "auto",
+    padding: "0.5rem",
+  };
 
   let windowWidth = 0;
   const BREAKPOINT = 768;

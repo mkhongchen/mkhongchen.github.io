@@ -65,11 +65,12 @@
 
 <style>
   .mobile-nav {
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 2rem;
     position: fixed;
     top: 0;
     left: 0;
@@ -79,6 +80,8 @@
   }
 
   .hamburger {
+    box-sizing: border-box;
+    padding: 0.5rem;
     font-size: 1.5rem;
     background: none;
     border: none;
@@ -118,7 +121,8 @@
     color: white;
     cursor: pointer;
     font-size: 1.2rem;
-    padding-left: 0.5rem;
+    justify-content: center;
+    align-items: center;
   }
 
   .submenu {

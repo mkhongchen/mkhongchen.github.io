@@ -1,6 +1,6 @@
 // Main navigation buttons
 export const mainButtons = [
-  { text: "About Me", 
+  { text: "About", 
     href: "#/about", 
     submenu: [
         { text: "About Me", href: "#/about", scrollTo: "#about-me" },
