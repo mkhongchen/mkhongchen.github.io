@@ -8,3 +8,9 @@
     href: "https://mkhongchen.ca/contact",
     target: "_blank",
   }
+
+  export const emailLink = {
+    href: "mailto:mk.hongchen@outlook.com",
+    target: "_blank",
+    note: "mk.hongchen@outlook.com"
+  }

@@ -5,7 +5,7 @@
 
   import ButtonList from "../components/ButtonList.svelte";
   import { socialButtons } from "../data/buttons";
-  import { sourceCode, contactLink } from "../data/textlinks.js";
+  import { sourceCode, contactLink, emailLink } from "../data/textlinks.js";
 
   import svelteIcon from "../assets/svelte.svg";
   import viteIcon from "../assets/vite.svg";
@@ -62,6 +62,16 @@
         Computer Science).
       </p>
       <p>
+        I am currently pursuing a career in architecture, with a keen interest
+        in utilizing computational design and digital fabrication to push the
+        envelope of innovative architecture. I am open to working in a variety
+        of roles, be it design, design technology, visualizatino, or anything
+        else that my skills might be useful in! If you would like to get in
+        touch with me about opportunities, please feel free to reach out via my
+        contact form <a {...contactLink}>here</a> or contact me via my email at:
+        <a {...emailLink}>{emailLink.note}</a>.
+      </p>
+      <p>
         During my time in university, as well as during my childhood, I grew to
         have a deep passion for all things tech, be it hardware or software. In
         fact, I began tinkering with computers from quite a young age, building
@@ -112,10 +122,10 @@
       <h2>The Tech</h2>
       <p>
         This website is built using Svelte and Vite, with Svelte-SPA-Router for
-        client-side routing. The programming for the site was done entirely by
-        myself, with guiding input from ChatGPT and CoPilot. Some pages may also
-        redirect to other services (e.g., Adobe Portfolio for contact forms,
-        CloudFlare for CDN).
+        client-side routing. The programming for the site was done by myself,
+        with coding assistance and input from ChatGPT and CoPilot. Some pages
+        may also redirect to other services (e.g., Adobe Portfolio for contact
+        forms, CloudFlare for CDN) to reduce complexity.
       </p>
       <p>
         The website is hosted on GitHub Pages, with the source code available
@@ -137,7 +147,7 @@
       </div>
     </div>
   </section>
-  <p class="bottom-text">Last Updated: 2025-09-04</p>
+  <p class="bottom-text">Last Updated: 2025-09-27</p>
 </main>
 
 <style>

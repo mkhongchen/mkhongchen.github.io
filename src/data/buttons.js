@@ -7,10 +7,10 @@ export const mainButtons = [
         { text: "About the Website", href: "#/about", scrollTo: "#about-site" },
       ],
   },
-  { text: "Portfolio", href: "#/portfolio",
+  { text: "Architecture", href: "#/portfolio",
     submenu: [
-        { text: "Project A", href: "#/portfolio-a" },
-        { text: "Project B", href: "#/portfolio-b" },
+        { text: "All Projects", href: "#/portfolio" },
+        { text: "Select Works (PDF)", href: "https://files.mkhongchen.ca/Portfolio.pdf", external: true },
     ],
    },
   { text: "Contact", href: "https://mkhongchen.ca/contact", external: true },
