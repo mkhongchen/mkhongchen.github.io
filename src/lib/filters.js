@@ -7,7 +7,7 @@
  */
 export function filterByType(projects, types) {
   if (!types || types.length === 0) return projects;
-  return projects.filter((p) => types.includes(p.type));
+  return projects.filter((p) => types.includes(p.type.name));
 }
 
 /**

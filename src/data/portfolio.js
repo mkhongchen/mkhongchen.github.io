@@ -1,116 +1,54 @@
 import { TYPES } from "./projectTypes.js";
+import testThumbnail from "../assets/background.jpg";
 
 export const portfolio = [
   {
     name: "Nomad Logic",
     type: TYPES.EDU,
-    date: new Date(2021, 4), // May 2021
-    people: ["A", "B", "C", "D"],
+    date: new Date(2021, 4), 
+    people: ["Hong C", "Young Hoon C", "Zachary C", "Nawal D", "Yiyang H"],
     page: ["https://example.com/nomadlogic"],
-    thumbnail: ["/images/nomadlogic.jpg"],
+    thumbnail: [testThumbnail]
   },
   {
-    name: "Studio House",
-    type: TYPES.PRO,
-    date: new Date(2023, 2), // March 2023
-    people: ["X", "Y"],
-    page: ["https://example.com/studiohouse"],
-    thumbnail: ["/images/studiohouse.jpg"],
+    name: "Augmenting Robotics",
+    type: TYPES.EDU,
+    date: new Date(2025, 4),
+    people: ["Hong C"],
+    page: ["https://example.com/augmentingrobotics"],
+    thumbnail: [testThumbnail]
   },
   {
-    name: "Community Mural",
-    type: TYPES.COM,
-    date: new Date(2022, 10), // November 2022
-    people: ["E", "F"],
-    page: ["https://example.com/communitymural"],
-    thumbnail: ["/images/communitymural.jpg"],
+    name: "The Hive",
+    type: TYPES.EDU,
+    date: new Date(2024, 1), 
+    people: ["Alex A", "Faizah A", "Hong C"],
+    page: ["https://example.com/thehive"],
+    thumbnail: [testThumbnail]
   },
   {
-    name: "Bridge Competition",
-    type: TYPES.COMP,
-    date: new Date(2021, 1), // February 2021
-    people: ["G", "H"],
-    page: ["https://example.com/bridgecompetition"],
-    thumbnail: ["/images/bridgecompetition.jpg"],
+    name: "Clouds",
+    type: TYPES.EDU,
+    date: new Date(2023, 4), 
+    people: ["Hong C"],
+    page: ["https://example.com/clouds"],
+    thumbnail: [testThumbnail]
   },
     {
-    name: "Skyline Towers",
-    type: TYPES.PRO,
-    date: new Date(2022, 5),
-    people: ["I", "J"],
-    page: ["https://example.com/skylinetowers"],
-    thumbnail: ["/images/skylinetowers.jpg"],
-  },
-  {
-    name: "Eco Campus",
-    type: TYPES.EDU,
-    date: new Date(2023, 8),
-    people: ["K", "L", "M"],
-    page: ["https://example.com/ecocampus"],
-    thumbnail: ["/images/ecocampus.jpg"],
-  },
-  {
-    name: "Art Pavilion",
-    type: TYPES.COM,
-    date: new Date(2022, 2),
-    people: ["N", "O"],
-    page: ["https://example.com/artpavilion"],
-    thumbnail: ["/images/artpavilion.jpg"],
-  },
-  {
-    name: "Riverwalk Design",
+    name: "The Commonspace",
     type: TYPES.COMP,
-    date: new Date(2023, 4),
-    people: ["P", "Q"],
-    page: ["https://example.com/riverwalk"],
-    thumbnail: ["/images/riverwalk.jpg"],
+    date: new Date(2025, 6),
+    people: ["Crystal C", "Hong C", "Samantha W"],
+    page: ["https://example.com/thecommonspace"],
+    thumbnail: [testThumbnail]
   },
   {
-    name: "Modern Loft",
+    name: "Beijing Yanqi",
     type: TYPES.PRO,
-    date: new Date(2021, 6),
-    people: ["R", "S"],
-    page: ["https://example.com/modernloft"],
-    thumbnail: ["/images/modernloft.jpg"],
-  },
-  {
-    name: "Innovation Hub",
-    type: TYPES.EDU,
-    date: new Date(2022, 9),
-    people: ["T", "U", "V"],
-    page: ["https://example.com/innovationhub"],
-    thumbnail: ["/images/innovationhub.jpg"],
-  },
-  {
-    name: "City Park Revamp",
-    type: TYPES.COM,
-    date: new Date(2023, 1),
-    people: ["W", "X"],
-    page: ["https://example.com/citypark"],
-    thumbnail: ["/images/citypark.jpg"],
-  },
-  {
-    name: "Floating Pavilion",
-    type: TYPES.COMP,
-    date: new Date(2022, 3),
-    people: ["Y", "Z"],
-    page: ["https://example.com/floatingpavilion"],
-    thumbnail: ["/images/floatingpavilion.jpg"],
-  },
-  {
-    name: "Riverside Apartments",
-    type: TYPES.PRO,
-    date: new Date(2023, 6),
-    people: ["AA", "BB"],
-    page: ["https://example.com/riversideapartments"],
-    thumbnail: ["/images/riversideapartments.jpg"],
-  },
-  {
-    name: "Tech Campus Expansion",
-    type: TYPES.EDU,
-    date: new Date(2021, 11),
-    people: ["CC", "DD"],
-    page: ["https://example.com/techcampus"],
-    thumbnail: ["/images/techcampus.jpg"],
-  },
+    date: new Date(2024, 8),
+    people: ["ANDStudio"],
+    page: ["https://www.andstudio.net/news/2500.html"],
+    background_image: ["https://www.andstudio.net/wp-content/uploads/2023/07/EXT-01_1.jpg"],
+    thumbnail: ["https://files.mkhongchen.ca/BYThumbnail.jpg"]
+    }
 ];

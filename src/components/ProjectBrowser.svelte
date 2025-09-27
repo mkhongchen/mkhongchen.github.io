@@ -4,6 +4,7 @@
   import { sortAlpha, sortByDate } from "../lib/sorters.js";
 
   export let projectsList = [];
+  export let cardComponent;
 
   // --- state ---
   let sortOption = "default"; // "default" | "alpha" | "date"
@@ -29,7 +30,7 @@
   }
 
   // --- dynamic options ---
-  const typeOptions = [...new Set(projectsList.map((p) => p.type))];
+  const typeOptions = [...new Set(projectsList.map((p) => p.type.name))];
   const yearOptions = getYears(projectsList, "desc");
 
   // --- filtered + sorted projects ---
@@ -127,8 +128,8 @@
             <label class="custom-checkbox">
               <input
                 type="checkbox"
-                checked={filterType.includes(year)}
-                on:change={() => toggleType(year)}
+                checked={filterYear.includes(year)}
+                on:change={() => toggleYear(year)}
               />
               <span class="checkmark"></span>
               {year}
@@ -145,30 +146,17 @@
 
   <!-- --- Projects Listing --- -->
   <div class="projects-container">
-    <div class="projects-grid">
-      {#each filtered as project}
-        <div class="project-card">
-          <img src={project.thumbnail[0]} alt={project.name} />
-          <h3>{project.name}</h3>
-          <p>
-            {project.type} — {project.date.toLocaleDateString(undefined, {
-              month: "long",
-              year: "numeric",
-            })}
-          </p>
-        </div>
-      {/each}
-    </div>
+    {#each filtered as project}
+      <svelte:component this={cardComponent} {...project} />
+    {/each}
   </div>
 </div>
 
 <style>
   .project-browser-wrapper {
-    opacity: 0.95; /* slightly see-through */
-    background-color: rgba(0, 0, 0, 0.2);
-    width: 95%;
+    background-color: rgba(0, 0, 0, 0.02);
+    width: 100%;
     padding: 0rem;
-    border-radius: 0.5rem; /* optional: makes edges visible */
     display: flex;
     flex-direction: column;
   }
@@ -181,13 +169,13 @@
     align-items: center;
     padding: 0.5rem 0.5rem 0;
     justify-content: space-between;
-    border-radius: 0.5rem 0.5rem 0 0; /* match wrapper */
-    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0; /* match wrapper */
+    background-color: rgba(0, 0, 0, 0.1);
   }
 
   .toolbar-footer {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.1);
     height: 0.5rem;
   }
 
@@ -203,7 +191,7 @@
     gap: 2rem;
     flex-direction: column;
     padding: 1rem 0.75rem 0.5rem;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.1);
   }
 
   .filter-group {
@@ -247,13 +235,18 @@
   }
 
   .projects-container {
-    max-height: 400px; /* adjust depending on your 4–5 project rows */
+    max-height: 600px; /* adjust depending on your 4–5 project rows */
     overflow-y: auto;
-    width: 100%;
-    padding-right: 0.5rem; /* optional: prevent scrollbar overlap */
+    width: 98%;
+    padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+
+    gap: 10px;
+    display: grid;
+    box-shadow:
+      inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+      inset -4px -4px 8px rgba(255, 255, 255, 0.02);
   }
 
-  /* optional: style scrollbar */
   .projects-container::-webkit-scrollbar {
     width: 8px;
   }
@@ -281,7 +274,6 @@
     width: 0;
   }
 
-  /* Create a custom checkbox */
   .custom-checkbox .checkmark {
     position: relative;
     display: inline-block;
@@ -295,7 +287,7 @@
 
   /* Checked state */
   .custom-checkbox input:checked + .checkmark {
-    background-color: #ffffff; /* green when checked */
+    background-color: #ffffff;
   }
 
   /* Optional: add a checkmark inside */

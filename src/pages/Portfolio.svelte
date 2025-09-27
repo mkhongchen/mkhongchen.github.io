@@ -1,7 +1,7 @@
 <script>
   import Header from "../components/Header.svelte";
-
   import ProjectBrowser from "../components/ProjectBrowser.svelte";
+  import PortfolioCard from "../components/PortfolioCard.svelte";
 
   import { portfolio } from "../data/portfolio.js";
 
@@ -25,8 +25,7 @@
 
 <main>
   <h1>Portfolio</h1>
-  <p>This is a placeholder page. Add your content here.</p>
-  <ProjectBrowser projectsList={portfolio} />
+  <ProjectBrowser projectsList={portfolio} cardComponent={PortfolioCard} />
 </main>
 
 <style>
@@ -48,5 +47,6 @@
     justify-content: center;
     text-align: center;
     gap: 2rem;
+    padding-top: 40px;
   }
 </style>
