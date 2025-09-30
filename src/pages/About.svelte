@@ -65,7 +65,7 @@
         I am currently pursuing a career in architecture, with a keen interest
         in utilizing computational design and digital fabrication to push the
         envelope of innovative architecture. I am open to working in a variety
-        of roles, be it design, design technology, visualizatino, or anything
+        of roles, be it design, design technology, visualization, or anything
         else that my skills might be useful in! If you would like to get in
         touch with me about opportunities, please feel free to reach out via my
         contact form <a {...contactLink}>here</a> or contact me via my email at:
