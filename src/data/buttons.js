@@ -35,12 +35,23 @@ export const socialButtons = [
     },
 ];
 
+//Resume and Portfolio icon buttons
+export const fileButtons = [
+  {
+    icon: "ph:file-light",
+    href: "https://files.mkhongchen.ca/Resume.pdf",
+    external: true,
+  },
+  {
+    icon: "bytesize:book",
+    href: "https://files.mkhongchen.ca/Portfolio.pdf",
+    external: true,
+  }
+]
+
 //Main home button
 export const home = 
   {
     text: "Hong Chen",
-    fontSize: "24pt",
     href: "#/",
-    backgroundColor: "rgba(0,0,0,0.0)",
-    width: "auto",
   };

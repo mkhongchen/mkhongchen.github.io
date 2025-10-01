@@ -5,10 +5,16 @@
   export let date;
   export let type;
   export let people = [];
-  export let page = "#"; //TODO: INSERT ACTUAL LINK
+  export let page = "#"; //TODO: INSERT 404
+  export let external = false;
 </script>
 
-<a class="portfolio-card" href={page}>
+<a
+  class="portfolio-card"
+  href={page}
+  target={external ? "_blank" : "_self"}
+  rel={external ? "noopener noreferrer" : undefined}
+>
   {#if background_image}
     <div
       class="background"

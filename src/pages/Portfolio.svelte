@@ -19,8 +19,6 @@
   });
 </script>
 
-<div class="background"></div>
-
 <Header />
 
 <main>
@@ -29,17 +27,6 @@
 </main>
 
 <style>
-  /* Make the entire page have the background */
-  .background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: darkgray;
-    z-index: -1; /* Ensure background stays behind content */
-  }
-
   main {
     display: flex;
     flex-direction: column;
@@ -47,6 +34,6 @@
     justify-content: center;
     text-align: center;
     gap: 2rem;
-    padding-top: 40px;
+    padding-top: 3rem;
   }
 </style>

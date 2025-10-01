@@ -1,10 +1,9 @@
 <script>
   import Header from "../components/Header.svelte";
   import profileImage from "../assets/profile.jpg";
-  import { BREAKPOINTS } from "../styles/breakpoints.js";
-
   import ButtonList from "../components/ButtonList.svelte";
-  import { socialButtons } from "../data/buttons";
+
+  import { socialButtons, fileButtons } from "../data/buttons";
   import { sourceCode, contactLink, emailLink } from "../data/textlinks.js";
 
   import svelteIcon from "../assets/svelte.svg";
@@ -12,19 +11,18 @@
   import Icon from "@iconify/svelte";
 
   import { onMount, onDestroy } from "svelte";
+  import { BREAKPOINTS } from "../styles/breakpoints.js";
 
   onMount(() => {
     document.documentElement.dataset.page = "about";
   });
 
   onDestroy(() => {
-    // only remove if still set to this page (prevents stomping another page)
     if (document.documentElement.dataset.page === "about") {
       delete document.documentElement.dataset.page;
     }
   });
 
-  // use matchMedia to set a class instead of relying on var() in @media
   const mq =
     typeof window !== "undefined"
       ? window.matchMedia(`(min-width: ${BREAKPOINTS.desktop}px)`)
@@ -37,7 +35,6 @@
 
   if (mq) {
     updateDesktopClass();
-    // support both modern and older browsers
     if (mq.addEventListener) mq.addEventListener("change", updateDesktopClass);
     else mq.addListener(updateDesktopClass);
   }
@@ -90,16 +87,17 @@
       </p>
     </div>
 
-    <div class="about-profile">
+    <div class="about-profile flex-column-center">
       <!-- svelte-ignore a11y_img_redundant_alt -->
       <img src={profileImage} alt="Profile Picture" />
       <p>Me on my condo balcony (Circa 2022)</p>
     </div>
 
-    <div class="about-links">
+    <div class="about-links flex-column-center">
       <p>Find me on:</p>
       <ButtonList buttons={socialButtons} flexDirection="row" gap="1rem" />
       <p>Get a PDF of my resume and portfolio here:</p>
+      <ButtonList buttons={fileButtons} flexDirection="row" gap="1rem" />
     </div>
   </section>
 
@@ -133,14 +131,14 @@
       </p>
     </div>
 
-    <div class="site-icons">
+    <div class="site-icons flex-column-center">
       <div class="site-software">
         <img src={svelteIcon} alt="Svelte Logo" width="50" />
         <h1>+</h1>
         <img src={viteIcon} alt="Vite Logo" width="50" />
       </div>
 
-      <div class="gpt">
+      <div class="gpt flex-row-center">
         <Icon icon="arcticons:openai-chatgpt" width="50" />
         <h1>&</h1>
         <Icon icon="ri:copilot-fill" width="50" />
@@ -151,47 +149,54 @@
 </main>
 
 <style>
+  /* ===== General Layout ===== */
   main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 10rem;
-    padding-top: 20px;
+    gap: 5rem;
+    margin-top: 3rem;
+    padding: 0 2rem;
+    box-sizing: border-box;
   }
-  #about-me {
+
+  section {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 2rem;
-    align-items: start;
     margin: 0 auto;
     max-width: 1200px;
   }
 
-  :global(.is-desktop) #about-me {
-    grid-template-columns: 2fr 1fr;
-  }
-
-  .about-header {
-    order: -2;
-  }
-
-  .about-text p {
+  p {
     text-align: left;
+    margin: 0.5rem 0;
   }
 
-  :global(.is-desktop) .about-text {
-    grid-column: 1;
-    grid-row: 2 / span 2;
-    text-align: left;
-  }
-
-  .about-profile {
+  /* ===== Utility Classes ===== */
+  .flex-column-center {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.25rem;
+  }
+
+  .flex-row-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  /* ===== About Me Section ===== */
+  .about-header,
+  .about-site-header {
+    order: -2;
+  }
+
+  .about-profile {
     order: -1;
   }
 
@@ -200,10 +205,43 @@
     border-radius: 50%;
   }
 
-  .about-profile p {
-    font-size: 0.8rem;
-    color: white;
-    margin: 0;
+  .about-links p {
+    text-align: center;
+  }
+
+  /* ===== About Site Section ===== */
+  .about-site-text h2 {
+    margin-top: 4rem;
+  }
+
+  /* ===== Icons ===== */
+  .site-icons {
+    margin-top: 1rem;
+  }
+
+  .site-software,
+  .gpt {
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+
+  /* ===== Bottom Text ===== */
+  .bottom-text {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+
+  /* ===== Desktop Overrides ===== */
+  :global(.is-desktop) #about-me,
+  :global(.is-desktop) #about-site {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  :global(.is-desktop) .about-text,
+  :global(.is-desktop) .about-site-text {
+    grid-column: 1;
+    grid-row: 2 / span 2;
+    text-align: left;
   }
 
   :global(.is-desktop) .about-profile {
@@ -211,80 +249,15 @@
     grid-column: 2;
     grid-row: 2;
   }
+
   :global(.is-desktop) .about-links {
     grid-column: 2;
     grid-row: 3;
   }
 
-  #about-site {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    align-items: start;
-    margin: 0 auto;
-    max-width: 1200px;
-  }
-
-  :global(.is-desktop) #about-site {
-    grid-template-columns: 2fr 1fr;
-  }
-
-  .about-site-header {
-    order: -2;
-  }
-
-  .about-site-text p {
-    align-self: flex-start;
-    text-align: left;
-  }
-
-  .about-site-text h2 {
-    margin-top: 4rem;
-  }
-
-  :global(.is-desktop) .about-site-text {
-    grid-column: 1;
-    grid-row: 2;
-  }
-
-  .site-icons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 3rem;
-    margin-top: 1rem;
-    justify-content: center;
-  }
-
   :global(.is-desktop) .site-icons {
     grid-column: 2;
     grid-row: 2;
-  }
-
-  :global(.is-desktop) .site-icons {
     flex-direction: column;
-  }
-
-  .site-software {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  .gpt {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  .bottom-text {
-    font-size: 0.7rem;
   }
 </style>

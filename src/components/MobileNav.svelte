@@ -76,7 +76,6 @@
     left: 0;
     z-index: 100;
     background: rgba(20, 20, 20, 0.8);
-    backdrop-filter: blur(10px);
   }
 
   .hamburger {
@@ -95,7 +94,6 @@
     left: 0;
     width: 100%;
     background: rgba(20, 20, 20, 0.8);
-    backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;

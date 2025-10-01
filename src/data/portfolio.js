@@ -48,7 +48,8 @@ export const portfolio = [
     date: new Date(2024, 8),
     people: ["ANDStudio"],
     page: ["https://www.andstudio.net/news/2500.html"],
-    background_image: ["https://www.andstudio.net/wp-content/uploads/2023/07/EXT-01_1.jpg"],
-    thumbnail: ["https://files.mkhongchen.ca/BYThumbnail.jpg"]
+    background_image: ["https://files.mkhongchen.ca/BYBackground.jpg"],
+    thumbnail: ["https://files.mkhongchen.ca/BYThumbnail.jpg"],
+    external: true
     }
 ];

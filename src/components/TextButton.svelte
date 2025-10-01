@@ -6,8 +6,7 @@
   import { push } from "svelte-spa-router";
 
   // Style props
-  export let textColor = "white";
-  export let fontSize = `12pt`;
+  export let styleClass = "p";
   export let backgroundColor = "rgba(0,0,0,0)";
   export let width = "150px";
   export let justifyContent = "center";
@@ -40,13 +39,11 @@
 </script>
 
 <a
-  class="text-button"
+  class="text-button {styleClass}"
   {href}
   target={external ? "_blank" : "_self"}
   rel={external ? "noopener noreferrer" : undefined}
   style="
-    font-size: {fontSize};
-    color: {textColor};
     background-color: {backgroundColor};
     width: {width};
     display: flex;
@@ -64,9 +61,13 @@
     text-decoration: none;
     border: none;
     cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    padding: 8px 14px;
     transition:
       background-color 0.3s ease,
-      color 0.3s ease;
+      color 0.3s ease,
+      transform 0.2s ease;
     box-sizing: border-box;
   }
 

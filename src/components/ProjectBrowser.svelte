@@ -188,7 +188,7 @@
 
   .filters-panel {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     flex-direction: column;
     padding: 1rem 0.75rem 0.5rem;
     background-color: rgba(0, 0, 0, 0.1);
@@ -235,7 +235,7 @@
   }
 
   .projects-container {
-    max-height: 600px; /* adjust depending on your 4–5 project rows */
+    max-height: 550px; /* adjust depending on your 4–5 project rows */
     overflow-y: auto;
     width: 98%;
     padding: 0.25rem 0.25rem 0.25rem 0.5rem;

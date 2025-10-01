@@ -24,21 +24,21 @@
   const navButtons = mainButtons.map((button) => ({
     ...button,
     backgroundColor: "rgba(0,0,0,0.4)",
-    width: "auto",
-    justifyContent: "flex-end",
+    width: "10rem",
+    justifyContent: "center",
     padding: "5px 15px",
   }));
-
-  let name = "Hong Chen";
-  let tagline = "Aspiring architect and designer.\n Website under development.";
 </script>
 
 <main>
-  <!-- svelte-ignore a11y_img_redundant_alt -->
-  <img src={profileImage} alt="Profile photo" />
+  <div class="preamble">
+    <!-- svelte-ignore a11y_img_redundant_alt -->
+    <img src={profileImage} alt="Profile photo" />
 
-  <h1>{name}</h1>
-  <p>{tagline}</p>
+    <h1>Hong Chen</h1>
+    <p>Aspiring architect and designer.</p>
+    <p>Website under development.</p>
+  </div>
 
   <ButtonList buttons={navButtons} />
   <ButtonList buttons={socialButtons} flexDirection="row" gap="1rem" />
@@ -52,22 +52,11 @@
     justify-content: center;
     text-align: center;
     gap: 2rem;
+    min-height: 90vh;
   }
 
   img {
-    width: 150px;
+    width: 12rem;
     border-radius: 50%;
-  }
-
-  h1 {
-    font-size: 40pt;
-    margin: 0;
-  }
-
-  p {
-    font-size: 14pt;
-    white-space: pre-line;
-    line-height: 1.75;
-    margin: 0;
   }
 </style>
