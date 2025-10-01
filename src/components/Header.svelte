@@ -8,7 +8,7 @@
     ...baseHome,
     width: "auto",
     padding: "0.5rem",
-    styleClass: "h1",
+    styleClass: "h2",
   };
 
   let windowWidth = 0;

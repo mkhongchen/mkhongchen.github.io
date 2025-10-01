@@ -34,6 +34,6 @@
     justify-content: center;
     text-align: center;
     gap: 2rem;
-    padding-top: 3rem;
+    padding-top: 4rem;
   }
 </style>
