@@ -72,6 +72,7 @@ button:focus-visible {
 /* ===== Typography ===== */
 h1, .h1, h2, .h2, h3, p, .p {
   color: #ffffff;
+  text-align: center;
 }
 
 h1, .h1 {
@@ -103,7 +104,6 @@ p, .p {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
 
 /* ===== Light Mode Overrides (Optional) ===== */

@@ -87,13 +87,13 @@
       </p>
     </div>
 
-    <div class="about-profile flex-column-center">
+    <div class="about-profile">
       <!-- svelte-ignore a11y_img_redundant_alt -->
       <img src={profileImage} alt="Profile Picture" />
       <p>Me on my condo balcony (Circa 2022)</p>
     </div>
 
-    <div class="about-links flex-column-center">
+    <div class="about-links">
       <p>Find me on:</p>
       <ButtonList buttons={socialButtons} flexDirection="row" gap="1rem" />
       <p>Get a PDF of my resume and portfolio here:</p>
@@ -131,14 +131,14 @@
       </p>
     </div>
 
-    <div class="site-icons flex-column-center">
-      <div class="site-software">
+    <div class="site-icons flex">
+      <div class="site-software flex">
         <img src={svelteIcon} alt="Svelte Logo" width="50" />
         <h1>+</h1>
         <img src={viteIcon} alt="Vite Logo" width="50" />
       </div>
 
-      <div class="gpt flex-row-center">
+      <div class="gpt flex">
         <Icon icon="arcticons:openai-chatgpt" width="50" />
         <h1>&</h1>
         <Icon icon="ri:copilot-fill" width="50" />
@@ -174,26 +174,19 @@
     margin: 0.5rem 0;
   }
 
-  /* ===== Utility Classes ===== */
-  .flex-column-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.25rem;
-  }
-
-  .flex-row-center {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-  }
-
   /* ===== About Me Section ===== */
   .about-header,
   .about-site-header {
     order: -2;
+  }
+
+  .about-profile,
+  .about-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
   }
 
   .about-profile {
@@ -205,7 +198,8 @@
     border-radius: 50%;
   }
 
-  .about-links p {
+  .about-links,
+  .about-profile p {
     text-align: center;
   }
 
@@ -214,15 +208,21 @@
     margin-top: 4rem;
   }
 
-  /* ===== Icons ===== */
+  .flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
   .site-icons {
-    margin-top: 1rem;
+    gap: 4rem;
   }
 
   .site-software,
   .gpt {
-    margin-top: 1rem;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   /* ===== Bottom Text ===== */
@@ -257,7 +257,15 @@
 
   :global(.is-desktop) .site-icons {
     grid-column: 2;
-    grid-row: 2;
+    grid-row: 2 / span 2;
+  }
+
+  :global(.is-desktop) .flex {
     flex-direction: column;
+  }
+
+  :global(.is-desktop) .site-software,
+  .gpt {
+    gap: 0.25rem;
   }
 </style>
