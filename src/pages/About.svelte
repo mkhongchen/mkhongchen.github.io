@@ -50,7 +50,6 @@
         Hello! I'm Mingkang (Hong) Chen, an aspiring architect and creative
         exploring the myriad of ways that technology and creativity intersect.
       </p>
-
       <p>
         I am a recent graduate from the University of Toronto's Daniel's Faculty
         of Landscape, Architecture, and Design; where I obtained a Bachelor of
@@ -58,6 +57,7 @@
         in Computer Science from the Faculty of Arts and Science (Department of
         Computer Science).
       </p>
+      <h2>Current Endeavours</h2>
       <p>
         I am currently pursuing a career in architecture, with a keen interest
         in utilizing computational design and digital fabrication to push the
@@ -68,6 +68,7 @@
         contact form <a {...contactLink}>here</a> or contact me via my email at:
         <a {...emailLink}>{emailLink.note}</a>.
       </p>
+      <h2>Background</h2>
       <p>
         During my time in university, as well as during my childhood, I grew to
         have a deep passion for all things tech, be it hardware or software. In
@@ -76,14 +77,23 @@
         customize and modify Minecraft versions and servers by grade 7.
       </p>
       <p>
-        Nowadays, I am deeply interested in balancing industrial tools with DIY
-        attitudes to achieve personalised solutions and designs for the problems
-        we face. In fact, that attitude is one of the major reasons that this
-        website exists! Though web development might not be a core competency
-        required in architecture (or many design jobs for that matter), it is my
-        belief that being a strong designer is through having a diverse exposure
-        to tools and mediums that can be leveraged to solve our many diverse
-        design problems.
+        Yet, underneath that passion was always a desire to create. Whether it
+        be playing with legos as a child, or creating buildings, ships, planes,
+        etc. in a variety of video games, I have always had an urge to create.
+        This duality between technology and creativity is what led me to pursue
+        architecture. I believed (and still believe) that architecture serves as
+        the perfect field to combine both passions, with opportunities to make
+        great designs with bleeding-edge technology.
+      </p>
+      <p>
+        Nowadays, I am deeply interested in using industry standard tools with
+        DIY attitudes to achieve personalised solutions and designs for the
+        problems we face. In fact, that attitude is one of the major reasons
+        that this website exists! Though web development might not be a core
+        competency required in architecture (or many design jobs for that
+        matter), it is my belief that being a strong designer is through having
+        a diverse exposure to tools and mediums that can be leveraged to solve
+        our many diverse design problems.
       </p>
     </div>
 
@@ -145,7 +155,7 @@
       </div>
     </div>
   </section>
-  <p class="bottom-text">Last Updated: 2025-09-27</p>
+  <p class="bottom-text">Last Updated: 2025-11-01</p>
 </main>
 
 <style>
@@ -203,9 +213,8 @@
     text-align: center;
   }
 
-  /* ===== About Site Section ===== */
-  .about-site-text h2 {
-    margin-top: 4rem;
+  h2 {
+    margin-top: 3rem;
   }
 
   .flex {
