@@ -27,6 +27,7 @@
     width: "10rem",
     justifyContent: "center",
     padding: "5px 15px",
+    color: "white",
   }));
 </script>
 
@@ -57,5 +58,10 @@
   img {
     width: 12rem;
     border-radius: 50%;
+  }
+
+  h1,
+  p {
+    color: white;
   }
 </style>

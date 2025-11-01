@@ -75,7 +75,7 @@
     top: 0;
     left: 0;
     z-index: 100;
-    background: rgba(20, 20, 20, 0.8);
+    background: rgb(255, 255, 255);
   }
 
   .hamburger {
@@ -84,7 +84,7 @@
     font-size: 1.5rem;
     background: none;
     border: none;
-    color: white;
+    color: rgb(0, 0, 0);
     cursor: pointer;
   }
 
@@ -93,7 +93,7 @@
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(20, 20, 20, 0.8);
+    background: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -117,7 +117,7 @@
   .submenu-toggle {
     background: none;
     border: none;
-    color: white;
+    color: rgb(0, 0, 0);
     cursor: pointer;
     font-size: 1.2rem;
     justify-content: center;

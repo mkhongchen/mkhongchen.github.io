@@ -1,70 +1,73 @@
 <script>
   import { slide } from "svelte/transition";
   import TextButton from "./TextButton.svelte";
+  import { onMount, onDestroy } from "svelte";
 
   export let home;
   export let buttons = [];
 
+  console.log("DesktopNav component loaded!");
+
   let openIndex = null;
-  let closeTimeout;
 
-  function handleMouseEnter(i) {
-    clearTimeout(closeTimeout);
-    openIndex = i;
-  }
+  function handleButtonClick(i, button, event) {
+    console.log(
+      "Clicked:",
+      button.text,
+      "submenu:",
+      button.submenu,
+      "openIndex before:",
+      openIndex
+    );
 
-  function handleMouseLeave() {
-    // Delay closing so user can move to submenu
-    closeTimeout = setTimeout(() => {
+    if (button.submenu) {
+      event.preventDefault();
+      event.stopPropagation();
+      openIndex = openIndex === i ? null : i; // toggle
+    } else {
+      // For non-submenu buttons, TextButton handles routing itself
       openIndex = null;
-    }, 200); // 200ms decay
+    }
   }
 
-  function handleSubmenuEnter() {
-    clearTimeout(closeTimeout);
+  function closeAll() {
+    openIndex = null;
   }
 
-  function handleSubmenuLeave() {
-    closeTimeout = setTimeout(() => {
-      openIndex = null;
-    }, 200);
+  function handleOutsideClick(e) {
+    if (!e.target.closest(".desktop-nav")) closeAll();
   }
+
+  onMount(() => document.addEventListener("click", handleOutsideClick));
+  onDestroy(() => document.removeEventListener("click", handleOutsideClick));
 </script>
 
-<nav class="desktop-nav" on:mouseleave={handleMouseLeave}>
+<nav class="desktop-nav">
   <!-- Home button -->
   <TextButton {...home} />
   <div class="nav-wrapper">
     <ul class="menu">
       {#each buttons as button, i}
-        <li class="nav-item" on:mouseenter={() => handleMouseEnter(i)}>
-          <div class="nav-link">
-            <!-- Top-level nav button -->
-            <TextButton {...button} width="auto" />
+        <li>
+          {#if button.submenu}
+            <button on:click={(event) => handleButtonClick(i, button, event)}>
+              {button.text}
+              <span style="margin-left: 0.3em;">▾</span>
+            </button>
+          {:else}
+            <TextButton width="auto" {...button} />
+          {/if}
 
-            {#if button.submenu}
-              <span class="dropdown-indicator"> ▾ </span>
-            {/if}
-          </div>
+          {#if openIndex === i && button.submenu}
+            <div class="submenu-row" transition:slide={{ duration: 200 }}>
+              {#each button.submenu as sub}
+                <TextButton width="auto" {...sub} />
+              {/each}
+            </div>
+          {/if}
         </li>
       {/each}
     </ul>
-
-    {#if openIndex !== null && buttons[openIndex].submenu}
-      <div
-        class="submenu-row"
-        role="menu"
-        tabindex="-1"
-        on:mouseenter={handleSubmenuEnter}
-        on:mouseleave={handleSubmenuLeave}
-        transition:slide={{ duration: 200 }}
-      >
-        {#each buttons[openIndex].submenu as sub}
-          <!-- Submenu buttons -->
-          <TextButton {...sub} width="auto" />
-        {/each}
-      </div>
-    {/if}
   </div>
 </nav>
 
@@ -83,25 +86,9 @@
   .menu {
     display: flex;
     gap: 4rem;
-    list-style: none;
     margin: 0;
     padding: 0;
-  }
-
-  .nav-item {
-    position: relative;
-  }
-
-  .nav-link {
-    display: flex;
     align-items: center;
-    gap: 0.2rem;
-  }
-
-  .dropdown-indicator {
-    font-size: 0.8rem;
-    line-height: 1;
-    user-select: none;
   }
 
   .submenu-row {
@@ -112,7 +99,7 @@
     display: flex;
     justify-content: center;
     gap: 3rem;
-    background: rgba(20, 20, 20, 0.8);
+    background: rgb(255, 255, 255);
     padding: 0.5rem 0;
     z-index: 5;
   }

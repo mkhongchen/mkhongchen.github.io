@@ -223,6 +223,7 @@
   .site-software,
   .gpt {
     gap: 2rem;
+    color: black;
   }
 
   /* ===== Bottom Text ===== */

@@ -13,6 +13,7 @@
   export let scrollTo = "";
   export let offset = 80;
   export let padding = "5px";
+  export let color = "black";
 
   function handleClick(event) {
     if (external) return;
@@ -48,7 +49,8 @@
     width: {width};
     display: flex;
     justify-content: {justifyContent};
-    padding: {padding};"
+    padding: {padding};
+    color: {color};"
   on:click={handleClick}
 >
   <span>{text}</span>
@@ -63,7 +65,7 @@
     cursor: pointer;
     display: inline-flex;
     justify-content: center;
-    padding: 8px 14px;
+    padding: 0.6rem 1.2rem;
     transition:
       background-color 0.3s ease,
       color 0.3s ease,

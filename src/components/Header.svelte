@@ -37,7 +37,6 @@
     left: 0;
     right: 0;
     z-index: 100;
-    background: rgba(20, 20, 20, 0.8);
-    backdrop-filter: blur(10px);
+    background: rgb(255, 255, 255);
   }
 </style>
