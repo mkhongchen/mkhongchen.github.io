@@ -104,7 +104,6 @@
     flex-direction: column;
     width: 100%;
     padding: 0;
-    background: rgba(0, 0, 0, 0.02);
     box-sizing: border-box;
   }
 
@@ -114,7 +113,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgb(255, 255, 255);
   }
 
   button {
@@ -133,7 +132,8 @@
     flex-direction: column;
     gap: 1rem;
     padding: 1rem 0.75rem;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgb(255, 255, 255);
+    color: black;
   }
 
   .filter-group {
@@ -160,6 +160,7 @@
     gap: 0.4rem;
     cursor: pointer;
     user-select: none;
+    color: black;
   }
   .custom-checkbox input {
     position: absolute;
@@ -172,10 +173,10 @@
     display: inline-block;
     width: 12pt;
     height: 12pt;
-    border: 2px solid white;
+    border: 2px solid rgb(0, 0, 0);
   }
   .custom-checkbox input:checked + .checkmark {
-    background: #fff;
+    background: #ffffff;
   }
   .checkmark::after {
     content: "";
@@ -199,7 +200,7 @@
     padding: 0;
     margin-left: 0.3rem;
     font-size: 0.85rem;
-    color: #bdbdbd;
+    color: #878787;
     text-decoration: underline;
     cursor: pointer;
   }

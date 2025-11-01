@@ -167,7 +167,7 @@
     justify-content: center;
     text-align: center;
     gap: 5rem;
-    margin-top: 4rem;
+    margin-top: 3rem;
     padding: 0 2rem;
     box-sizing: border-box;
   }

@@ -62,8 +62,7 @@
     border-radius: 0 0.5rem 0.5rem 0;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* drop shadow */
-    background: rgba(255, 255, 255, 0.05); /* fallback behind bg image */
+    background: rgb(228, 228, 228); /* fallback behind bg image */
     height: 170px;
   }
 

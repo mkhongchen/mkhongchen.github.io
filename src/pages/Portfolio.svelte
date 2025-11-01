@@ -12,7 +12,6 @@
   });
 
   onDestroy(() => {
-    // only remove if still set to this page (prevents stomping another page)
     if (document.documentElement.dataset.page === "portfolio") {
       delete document.documentElement.dataset.page;
     }
@@ -34,6 +33,6 @@
     justify-content: center;
     text-align: center;
     gap: 2rem;
-    padding-top: 4rem;
+    padding-top: 3rem;
   }
 </style>
