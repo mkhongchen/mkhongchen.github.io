@@ -13,7 +13,8 @@ export const mainButtons = [
         { text: "Select Works (PDF)", href: "https://files.mkhongchen.ca/Portfolio.pdf", external: true },
     ],
    },
-  { text: "Contact", href: "https://mkhongchen.ca/contact", external: true },
+   { text: "Photography", href: "#/photography" },
+   { text: "Contact", href: "https://mkhongchen.ca/contact", external: true },
 ];
 
 // Main social media buttons

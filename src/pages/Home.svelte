@@ -36,7 +36,7 @@
     <img src={profileImage} alt="Profile photo" />
 
     <h1>Hong Chen</h1>
-    <p>Aspiring architect and designer.</p>
+    <p>Aspiring architect, photographer, and designer.</p>
     <p>Website under development.</p>
   </div>
 
@@ -52,7 +52,6 @@
     justify-content: center;
     text-align: center;
     gap: 2rem;
-    min-height: 90vh;
   }
 
   img {

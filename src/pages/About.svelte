@@ -166,7 +166,7 @@
     display: grid;
     gap: 2rem;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1600px;
   }
 
   p {
