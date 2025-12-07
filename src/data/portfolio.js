@@ -15,7 +15,7 @@ export const portfolio = [
     type: TYPES.EDU,
     date: new Date(2025, 4),
     people: ["Hong C"],
-    page: ["https://example.com/augmentingrobotics"],
+    page: ["#/AugmentingRobotics"],
     thumbnail: [testThumbnail]
   },
   {
