@@ -5,7 +5,7 @@
   export let external = false;
 
   // Style props
-  export let backgroundColor = "rgba(0,0,0,0.4)";
+  export let backgroundColor = "rgba(0,0,0,0.3)";
 </script>
 
 <a
