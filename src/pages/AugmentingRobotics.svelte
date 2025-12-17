@@ -64,7 +64,7 @@
         icon="ph:file-light"
         external={true}
       />
-      <p>Project Presenation:</p>
+      <p>Project Presentation:</p>
       <IconButton
         href="files.mkhongchen.ca/AR_Presentation.pptx"
         icon="mdi-light:presentation"
