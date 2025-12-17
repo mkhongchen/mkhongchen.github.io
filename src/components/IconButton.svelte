@@ -13,9 +13,7 @@
   {href}
   target={external ? "_blank" : "_self"}
   rel={external ? "noopener noreferrer" : undefined}
-  style="
-    background-color: {backgroundColor};
-  "
+  style="background-color: {backgroundColor};"
 >
   <Icon {icon} width="15px" height="15px" />
 </a>
