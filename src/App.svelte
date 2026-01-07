@@ -4,12 +4,14 @@
   import About from "./pages/About.svelte";
   import Portfolio from "./pages/Portfolio.svelte";
   import AugmentingRobotics from "./pages/AugmentingRobotics.svelte";
+  import UCAVideoStatement from "./pages/UCAVideoStatement.svelte";
 
   const routes = {
     "/": Home,
     "/about": About,
     "/portfolio": Portfolio,
     "/AugmentingRobotics": AugmentingRobotics,
+    "/UCAVideoStatement": UCAVideoStatement,
   };
 </script>
 
